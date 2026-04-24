@@ -1,0 +1,16 @@
+{
+  "source": {
+    "include": ["./src", "./App.js", "./index.js", "./README.md"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "exclude": ["node_modules", "android", "ios", "test"]
+  },
+  "opts": {
+    "destination": "./docs/",
+    "recurse": true
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
+}

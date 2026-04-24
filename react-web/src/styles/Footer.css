@@ -1,0 +1,100 @@
+.Footer {
+  padding: 1rem 1rem 2.2rem;
+  background:
+    radial-gradient(36rem 14rem at 8% 15%, rgba(109, 159, 64, 0.18), transparent 65%),
+    linear-gradient(180deg, #f0f4e7 0%, #e6efda 100%);
+  border-top: 1px solid rgba(88, 124, 54, 0.25);
+}
+
+.FooterInner {
+  max-width: 1160px;
+  margin: 0 auto;
+  border-radius: 26px;
+  padding: clamp(1.4rem, 2.4vw, 2rem) clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  background: rgba(251, 247, 235, 0.78);
+  border: 1px solid rgba(92, 126, 58, 0.2);
+  box-shadow: 0 22px 42px rgba(41, 60, 23, 0.12);
+}
+
+.FooterEyebrow {
+  margin: 0;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--accent-700);
+}
+
+.FooterTitle {
+  margin: 0.45rem 0 0;
+  color: var(--ink-900);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.StoreButton {
+  margin-top: 1.15rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.StoreButtonLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.StoreButtonLink:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+}
+
+.FooterButtonIcons {
+  display: block;
+  width: clamp(148px, 19vw, 184px);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.FooterLinks {
+  margin-top: 1.35rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+}
+
+.FooterLinks a {
+  text-decoration: none;
+  color: var(--ink-800);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.FooterLinks a:hover {
+  color: var(--accent-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.FooterParagraphe {
+  margin-top: 1.4rem;
+  color: var(--ink-700);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .StoreButtonLink {
+    width: auto;
+    max-width: none;
+  }
+
+  .FooterButtonIcons {
+    width: min(82vw, 240px);
+  }
+}

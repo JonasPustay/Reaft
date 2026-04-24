@@ -1,0 +1,41 @@
+.LegalContainer {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: #465928;
+  color: #ebe9d5;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.LegalTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ebe9d5;
+  margin-bottom: 2rem;
+}
+
+.LegalSection {
+  margin-bottom: 2rem;
+}
+
+.LegalSection h2 {
+  font-size: 1.3rem;
+  color: #6D8C3F;
+  margin-bottom: 0.5rem;
+}
+
+.LegalSection p {
+  line-height: 1.6;
+  color: #ebe9d5;
+}
+
+.LegalSection a {
+  color: #ebe9d5;
+  text-decoration: underline;
+}
+
+.LegalSection a:hover {
+  color: black;
+}

@@ -1,0 +1,379 @@
+{
+  "tabs": {
+    "building": "Bâtiments",
+    "map": "Carte",
+    "settings": "Paramètres"
+  },
+  "buildingScreen": {
+    "title": "Bâtiments",
+    "loading": "Chargement des bâtiments...",
+    "errors": {
+      "nameRequired": "Le nom du bâtiment est requis.",
+      "invalidLatitude": "Latitude invalide.",
+      "invalidLongitude": "Longitude invalide.",
+      "saveFailed": "Impossible d'enregistrer le bâtiment pour le moment."
+    },
+    "delete": {
+      "title": "Supprimer ce bâtiment ?",
+      "message": "Cette action supprimera le bâtiment \"{{name}}\".",
+      "cancel": "Annuler",
+      "confirm": "Supprimer"
+    },
+    "location": {
+      "permissionRequired": "La localisation nécessite votre autorisation.",
+      "success": "Position actuelle récupérée !",
+      "failed": "Impossible de récupérer la position."
+    }
+  },
+  "buildingEmptyState": {
+    "title": "Créez votre premier bâtiment",
+    "description": "Enregistrez vos bâtiments pour suivre les inspections, les défauts et leur état général.",
+    "cta": "Ajouter votre premier bâtiment"
+  },
+  "buildingList": {
+    "coordinates": "Lat. {{latitude}} · Lon. {{longitude}}",
+    "stateLabel": "État: {{condition}}",
+    "defectCount": "{{count}} défaut(s)",
+    "globalRepairCost": "Prix de réparation global : {{amount}}",
+    "description": "Gérez vos bâtiments, leurs emplacements et suivez les défauts détectés lors des inspections.",
+    "globalRepairCostLabel": "Prix de réparation global",
+    "stateShort": "État",
+    "priceShort": "Prix"
+  },
+  "buildingForm": {
+    "titleEdit": "Modifier le bâtiment",
+    "titleCreate": "Nouveau bâtiment",
+    "subtitle": "Renseignez les informations principales pour commencer.",
+    "iconTitle": "Choisir une icône",
+    "iconSubtitle": "Sélectionnez l'illustration qui représente le bâtiment.",
+    "nameLabel": "Nom du bâtiment",
+    "namePlaceholder": "Immeuble Lafayette",
+    "positionLabel": "Position",
+    "latitudePlaceholder": "Latitude",
+    "longitudePlaceholder": "Longitude",
+    "useCurrentLocation": "Utiliser ma position actuelle",
+    "selectOnMap": "Choisir sur la carte",
+    "mapTitle": "Sélectionner sur la carte",
+    "mapSubtitle": "Touchez la carte pour placer le bâtiment.",
+    "mapNoSelection": "Aucun point sélectionné.",
+    "mapConfirm": "Valider",
+    "cancel": "Annuler",
+    "update": "Mettre à jour",
+    "save": "Enregistrer"
+  },
+  "buildingActions": {
+    "title": "Actions",
+    "reorder": "Changer la disposition",
+    "edit": "Modifier",
+    "delete": "Supprimer"
+  },
+  "buildingDetail": {
+    "coordinates": "Lat. {{latitude}} · Lon. {{longitude}}",
+    "stateLabel": "État: {{condition}}",
+    "globalRepairCost": "Prix : {{amount}}",
+    "defectsTitle": "Défauts",
+    "defectLabel": "Défaut #{{index}}",
+    "noDefects": "Aucun défaut enregistré pour le moment.",
+    "close": "Fermer",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "addDefect": "Ajouter un défaut",
+    "imageSourceTitle": "Ajouter une photo",
+    "imageSourceMessage": "Choisissez la source de l'image du défaut.",
+    "takePhoto": "Prendre une photo",
+    "chooseFromGallery": "Choisir dans la galerie",
+    "permissionDeniedTitle": "Permission requise",
+    "cameraPermissionRequired": "L'accès à la caméra est nécessaire pour ajouter un défaut.",
+    "galleryPermissionRequired": "L'accès à la galerie est nécessaire pour choisir une photo.",
+    "photoSelectedTitle": "Défaut ajouté",
+    "photoSelectedMessage": "Le défaut avec sa photo a bien été enregistré.",
+    "noDefectDetectedTitle": "Aucun défaut détecté",
+    "noDefectDetectedMessage": "La photo ne montre pas de défaut clair. Le défaut n'a pas été ajouté.",
+    "analysisFailedTitle": "Analyse IA impossible",
+    "analysisFailedMessage": "Nous n'avons pas pu analyser la photo. Réessayez avec une photo plus nette.",
+    "geminiNotConfiguredTitle": "Proxy IA manquant",
+    "geminiNotConfiguredMessage": "Ajoutez GEMINI_PROXY_URL dans le fichier .env pour activer l'analyse IA.",
+    "photoDataErrorTitle": "Photo invalide",
+    "photoDataErrorMessage": "Impossible de lire la photo sélectionnée.",
+    "defectStateType": "État {{state}} · {{type}}",
+    "defectRepairPrice": "Réparation estimée: {{amount}}",
+    "unknownValue": "Inconnu",
+    "closePhoto": "Fermer la photo"
+  },
+  "defectDetail": {
+    "title": "Défaut {{index}}",
+    "createdAt": "Ajouté le {{date}}",
+    "createdAtUnknown": "Date inconnue",
+    "noPhoto": "Aucune photo",
+    "aiSectionTitle": "Analyse IA",
+    "damageState": "État: {{value}}",
+    "damageType": "Type: {{value}}",
+    "estimatedRepairCost": "Prix estimé: {{amount}}",
+    "confidence": "Confiance: {{value}}",
+    "unknownValue": "Inconnu",
+    "back": "Retour",
+    "delete": "Supprimer",
+    "deleteTitle": "Supprimer ce défaut ?",
+    "deleteMessage": "Cette action est irréversible.",
+    "deleteCancel": "Annuler",
+    "deleteConfirm": "Supprimer"
+  },
+  "defectAnalysisLoading": {
+    "title": "Analyse IA en cours",
+    "subtitle": "Merci de patienter pendant l'analyse du défaut.",
+    "warning": "Ne fermez pas l'application pendant cette étape, l'analyse peut être interrompue.",
+    "phraseInspectingSurface": "Inspection de la surface de la photo...",
+    "phraseCheckingDamageType": "Identification du type de dégradation...",
+    "phraseEstimatingRepairCost": "Estimation du coût de réparation...",
+    "phraseCrossCheckingResult": "Vérification finale de la cohérence..."
+  },
+  "buildingReorder": {
+    "defaultName": "Bâtiment",
+    "stateLabel": "État: {{condition}}",
+    "defectCount": "{{count}} défaut(s)",
+    "helper": "Maintenez la poignée et faites glisser pour changer l'ordre.",
+    "emptyState": "Ajoutez des bâtiments pour pouvoir modifier leur ordre.",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  },
+  "iconPicker": {
+    "back": "Retour"
+  },
+  "iconOptions": {
+    "business": "Immeuble",
+    "home": "Maison",
+    "church": "Église",
+    "warehouse": "Entrepôt",
+    "factory": "Usine",
+    "school": "École"
+  },
+  "settingsScreen": {
+    "title": "Paramètres",
+    "emailSubject": "Demande de support",
+    "alerts": {
+      "mailUnavailable": {
+        "title": "Erreur",
+        "message": "Aucune app mail trouvée."
+      },
+      "mailOpenFailed": {
+        "title": "Erreur",
+        "message": "Impossible d'ouvrir le mail."
+      },
+      "reviewUnavailable": {
+        "title": "Notation indisponible",
+        "message": "La fenêtre native de notation n'est pas disponible sur cet appareil pour le moment."
+      },
+      "reviewFailed": {
+        "title": "Erreur",
+        "message": "Impossible d'ouvrir la fenêtre de notation."
+      },
+      "manageSubscriptionUnavailable": {
+        "title": "Abonnement indisponible",
+        "message": "Impossible d'ouvrir la gestion de l'abonnement pour le moment."
+      },
+      "manageSubscriptionFailed": {
+        "title": "Erreur",
+        "message": "Impossible d'ouvrir la gestion de l'abonnement."
+      }
+    },
+    "modalTitles": {
+      "manageSubscription": "Gérer son abonnement",
+      "sendFeedback": "Envoyer un feedback"
+    }
+  },
+  "settingsOptions": {
+    "changeLanguage": "Changer la langue",
+    "manageSubscription": "Gérer son abonnement",
+    "manageData": "Gérer les données",
+    "contact": "Contact",
+    "sendFeedback": "Envoyer un feedback",
+    "rateApp": "Noter l'app",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfUse": "Conditions d'utilisation"
+  },
+  "settingModals": {
+    "manageData": {
+      "title": "Gérer les données",
+      "description": "Exportez ou importez votre liste de bâtiments, ou supprimez-la complètement.",
+      "actions": {
+        "export": "Exporter les données",
+        "import": "Importer les données",
+        "delete": "Supprimer les données"
+      },
+      "processing": "Traitement en cours...",
+      "export": {
+        "shareTitle": "Exporter vos données Reaft",
+        "shareMessage": "Sauvegarde des bâtiments Reaft",
+        "successTitle": "Export terminé",
+        "successMessage": "Fichier d'export généré ({{count}} bâtiment(s)).",
+        "errorTitle": "Erreur",
+        "errorMessage": "Impossible d'exporter les données."
+      },
+      "import": {
+        "successTitle": "Import terminé",
+        "successMessage": "{{count}} bâtiment(s) importé(s).",
+        "invalidTitle": "Fichier invalide",
+        "invalidMessage": "Le fichier sélectionné ne contient pas des données Reaft valides.",
+        "errorTitle": "Erreur",
+        "errorMessage": "Impossible d'importer les données."
+      }
+    },
+    "deleteData": {
+      "title": "Supprimer les données",
+      "description": "Êtes-vous sûr de vouloir supprimer la liste complète des bâtiments ? Cette action est irréversible.",
+      "cancel": "Annuler",
+      "confirm": "Supprimer",
+      "successTitle": "Succès",
+      "successMessage": "Tous vos bâtiments ont été supprimés.",
+      "successButton": "OK",
+      "errorTitle": "Erreur",
+      "errorMessage": "Impossible de supprimer les données."
+    },
+    "changeLanguage": {
+      "title": "Langue",
+      "subtitle": "Choisissez votre langue.",
+      "close": "Fermer",
+      "options": {
+        "fr": "Français",
+        "en": "English",
+        "es": "Español"
+      }
+    },
+    "placeholder": {
+      "soon": "Fonctionnalité bientôt disponible.",
+      "close": "Fermer"
+    }
+  },
+  "paywall": {
+    "title": "Abonnez-vous à Reaft",
+    "subtitle": "Débloquez toutes les fonctionnalités premium dès maintenant.",
+    "features": {
+      "ai": "Analyses IA avancées",
+      "unlimited": "Utilisation illimitée",
+      "monitoring": "Suivi détaillé de l'état des bâtiments",
+      "reports": "Exports et imports",
+      "support": "Support prioritaire",
+      "earlyAccess": "Accès anticipé aux nouveautés"
+    },
+    "plans": {
+      "weekly": "Hebdomadaire",
+      "weeklyTrial": "3 jours gratuits",
+      "monthly": "Mensuel",
+      "annual": "Annuel",
+      "period": {
+        "weekly": "par semaine",
+        "monthly": "par mois",
+        "annual": "par an"
+      },
+      "details": {
+        "weekly": "Idéal pour essayer l'app",
+        "monthly": "Le plan le plus flexible",
+        "annual": "Le meilleur prix sur 12 mois"
+      }
+    },
+    "badges": {
+      "popular": "Populaire",
+      "bestValue": "Meilleure offre"
+    },
+    "messages": {
+      "loading": "Chargement des offres...",
+      "unavailable": "Indisponible"
+    },
+    "actions": {
+      "close": "Fermer",
+      "continue": "Continuer",
+      "restore": "Restaurer",
+      "privacy": "Confidentialité",
+      "terms": "Conditions"
+    },
+    "alerts": {
+      "errorTitle": "Erreur",
+      "purchaseSuccessTitle": "Achat réussi",
+      "purchaseSuccessMessage": "Votre accès premium est activé.",
+      "pendingTitle": "Achat en attente",
+      "pendingMessage": "Votre achat est en cours de validation.",
+      "purchaseErrorMessage": "Impossible de finaliser l'achat.",
+      "restoreSuccessTitle": "Achats restaurés",
+      "restoreSuccessMessage": "Votre accès premium a été restauré.",
+      "restoreEmptyTitle": "Aucun achat trouvé",
+      "restoreEmptyMessage": "Aucun achat actif n'a été trouvé pour ce compte.",
+      "restoreErrorMessage": "Impossible de restaurer les achats.",
+      "linkError": "Impossible d'ouvrir ce lien."
+    }
+  },
+  "onboarding": {
+    "stepCounter": "Étape {{current}}/{{total}}",
+    "welcome": {
+      "title": "Bienvenue sur Reaft",
+      "subtitle": "Configurez votre profil en quelques secondes pour une expérience personnalisée."
+    },
+    "profile": {
+      "title": "Qui êtes-vous ?",
+      "subtitle": "Ce choix nous aide à adapter l'application à votre usage.",
+      "options": {
+        "individual": "Particulier",
+        "company": "Entreprise",
+        "community": "Communauté",
+        "association": "Association",
+        "other": "Autre"
+      }
+    },
+    "discovery": {
+      "title": "Comment nous avez-vous connus ?",
+      "subtitle": "Cette information nous aide à savoir ce qui fonctionne le mieux.",
+      "options": {
+        "wordOfMouth": "Bouche-à-oreille",
+        "socialMedia": "Réseaux sociaux",
+        "searchEngine": "Recherche web",
+        "store": "App Store / Play Store",
+        "other": "Autre"
+      }
+    },
+    "review": {
+      "title": "Vous aimez Reaft ?",
+      "subtitle": "Une note rapide nous aide énormément à accélérer le projet.",
+      "cta": "Laisser une note",
+      "successHint": "Merci pour votre retour.",
+      "unavailableTitle": "Notation indisponible",
+      "unavailableMessage": "La fenêtre native de notation n'est pas disponible pour le moment.",
+      "errorTitle": "Erreur",
+      "errorMessage": "Impossible d'ouvrir la fenêtre de notation."
+    },
+    "actions": {
+      "back": "Retour",
+      "continue": "Continuer",
+      "finish": "Continuer vers l'abonnement"
+    }
+  },
+  "mapScreen": {
+    "title": "Carte",
+    "cluster": {
+      "multipleBuildings": "Plusieurs bâtiments"
+    },
+    "conditions": {
+      "A": "Excellent état",
+      "B": "Bon état",
+      "C": "État correct",
+      "D": "État dégradé",
+      "E": "Mauvais état",
+      "F": "État critique",
+      "unknown": "État inconnu"
+    },
+    "popup": {
+      "conditionBadge": "État {{condition}}",
+      "defectCount": "{{count}} défaut(s)",
+      "globalRepairCostLabel": "Prix de réparation global",
+      "coordinatesLabel": "Coordonnées",
+      "addedDateLabel": "Date d'ajout",
+      "viewBuilding": "Consulter ce bâtiment",
+      "notAvailable": "N/A"
+    },
+    "locationPermission": {
+      "title": "Permission de localisation",
+      "message": "Cette application a besoin d'accéder à votre position.",
+      "later": "Plus tard",
+      "cancel": "Annuler",
+      "ok": "OK"
+    }
+  }
+}

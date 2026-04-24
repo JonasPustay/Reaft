@@ -1,0 +1,117 @@
+.NavShell {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0.45rem 0.8rem 0;
+}
+
+.NavContainer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.38rem 0.65rem;
+  border-radius: 24px;
+  background: rgba(251, 248, 237, 0.96);
+  border: 1px solid rgba(90, 123, 58, 0.22);
+  box-shadow: 0 10px 24px rgba(35, 50, 20, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+}
+
+.NavBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+}
+
+.LogoIcon {
+  display: block;
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+}
+
+.BrandName {
+  font-family: "Fraunces", "Georgia", serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+}
+
+.NavLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.NavLinks a {
+  text-decoration: none;
+  color: var(--ink-800);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.38rem 0.7rem;
+  font-size: 0.97rem;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.NavLinks a:hover {
+  color: var(--ink-900);
+  background: rgba(86, 123, 49, 0.1);
+  transform: translateY(-1px);
+}
+
+.NavLinks .NavCta {
+  padding-inline: 0.9rem;
+  color: #f6f9ee;
+  background: linear-gradient(125deg, #4f792d 0%, #6ca13f 100%);
+  box-shadow: 0 8px 16px rgba(55, 83, 32, 0.24);
+}
+
+.NavLinks .NavCta:hover {
+  color: #ffffff;
+  background: linear-gradient(125deg, #466f29 0%, #5f9238 100%);
+}
+
+@media (max-width: 780px) {
+  .NavShell {
+    padding-top: 0.45rem;
+  }
+
+  .NavContainer {
+    border-radius: 18px;
+    padding: 0.55rem 0.65rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .NavBrand {
+    justify-content: center;
+  }
+
+  .LogoIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .BrandName {
+    font-size: 1.32rem;
+  }
+
+  .NavLinks {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .NavLinks a {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}

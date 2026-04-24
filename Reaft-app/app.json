@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "plugins": [
+      "@rnmapbox/maps",
+      "expo-localization"
+    ],
+    "name": "Reaft",
+    "slug": "Reaft",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icons/iconn.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.maximerollin.Reaft",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Reaft utilise votre position pour renseigner automatiquement les coordonnées d'un bâtiment.",
+        "NSCameraUsageDescription": "Reaft utilise la caméra pour ajouter une photo de défaut.",
+        "NSPhotoLibraryUsageDescription": "Reaft utilise votre galerie pour sélectionner une photo de défaut."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.maximerollin.Reaft"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

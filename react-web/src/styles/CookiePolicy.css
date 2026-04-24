@@ -1,0 +1,54 @@
+.cookie-policy-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: #465928;
+  color: #ebe9d5;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.cookie-policy-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ebe9d5;
+  margin-bottom: 2rem;
+}
+
+.effective-date {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2rem;
+  color: #ebe9d5;
+}
+
+.cookie-policy-container section {
+  margin-bottom: 2rem;
+}
+
+.cookie-policy-container section h2 {
+  font-size: 1.3rem;
+  color: #6D8C3F;
+  margin-bottom: 0.5rem;
+}
+
+.cookie-policy-container section p {
+  line-height: 1.6;
+  color: #ebe9d5;
+}
+
+.cookie-policy-container section ul {
+  line-height: 1.6;
+  color: #ebe9d5;
+  padding-left: 1.5rem;
+}
+
+.cookie-policy-container section a {
+  color: #ebe9d5;
+  text-decoration: underline;
+}
+
+.cookie-policy-container section a:hover {
+  color: black;
+}

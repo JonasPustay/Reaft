@@ -1,0 +1,8 @@
+name = "reaft-ai-proxy"
+main = "src/index.js"
+compatibility_date = "2026-03-19"
+workers_dev = true
+preview_urls = false
+
+[vars]
+DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"

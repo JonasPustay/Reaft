@@ -1,0 +1,13 @@
+/* Light mode */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #1a202c;
+  color: #f7fafc;
+}

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --ink-900: #1f2d15;
+  --ink-800: #2d4020;
+  --ink-700: #42592d;
+  --accent-700: #517e30;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Avenir Next", "Trebuchet MS", sans-serif;
+  color: var(--ink-900);
+  background: #f7f9f1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Fraunces", "Georgia", serif;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent-700);
+}
+
+a:hover {
+  color: var(--ink-900);
+}
+
+code {
+  font-family: "Fira Code", "Consolas", "Monaco", monospace;
+}

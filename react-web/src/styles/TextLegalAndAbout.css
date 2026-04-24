@@ -1,0 +1,73 @@
+.TextContainer {
+  background: linear-gradient(to bottom, #465928, #6D8C3F);
+  color: #ebe9d5;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.TitleContainer {
+  font-size: 2.5rem;
+  color: #ebe9d5;
+  margin-bottom: 0.5rem;
+}
+
+.TextSubtitle {
+  font-size: 1.2rem;
+  color: #d0cebd;
+  margin-bottom: 2rem;
+}
+
+.TextSection {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #ebe9d5;
+  color: #465928;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  text-align: left;
+  transition: box-shadow 0.3s ease;
+}
+
+.TextSection:hover {
+  box-shadow: 0 0 15px rgba(109, 140, 63, 0.6);
+}
+
+.TextSection h2 {
+  color: #6D8C3F;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.TextSection p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.TextList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.TextList li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.TextList li::before {
+  content: "•";
+  color: #6D8C3F;
+  position: absolute;
+  left: 0;
+}
+
+.TextLink {
+  color: #6D8C3F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.TextLink:hover {
+  text-decoration: underline;
+}

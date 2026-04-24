@@ -1,0 +1,379 @@
+{
+  "tabs": {
+    "building": "Edificios",
+    "map": "Mapa",
+    "settings": "Configuración"
+  },
+  "buildingScreen": {
+    "title": "Edificios",
+    "loading": "Cargando edificios...",
+    "errors": {
+      "nameRequired": "El nombre del edificio es obligatorio.",
+      "invalidLatitude": "Latitud no válida.",
+      "invalidLongitude": "Longitud no válida.",
+      "saveFailed": "No se puede guardar el edificio en este momento."
+    },
+    "delete": {
+      "title": "¿Eliminar este edificio?",
+      "message": "Esta acción eliminará el edificio \"{{name}}\".",
+      "cancel": "Cancelar",
+      "confirm": "Eliminar"
+    },
+    "location": {
+      "permissionRequired": "La localización requiere tu autorización.",
+      "success": "¡Ubicación actual obtenida!",
+      "failed": "No se pudo obtener la ubicación."
+    }
+  },
+  "buildingEmptyState": {
+    "title": "Crea tu primer edificio",
+    "description": "Guarda tus edificios para seguir inspecciones, defectos y su estado general.",
+    "cta": "Agregar tu primer edificio"
+  },
+  "buildingList": {
+    "coordinates": "Lat. {{latitude}} · Lon. {{longitude}}",
+    "stateLabel": "Estado: {{condition}}",
+    "defectCount": "{{count}} defecto(s)",
+    "globalRepairCost": "Costo total de reparación: {{amount}}",
+    "description": "Gestiona tus edificios, sus ubicaciones y sigue los defectos detectados durante las inspecciones.",
+    "globalRepairCostLabel": "Costo total de reparación",
+    "stateShort": "Estado",
+    "priceShort": "Precio"
+  },
+  "buildingForm": {
+    "titleEdit": "Editar edificio",
+    "titleCreate": "Nuevo edificio",
+    "subtitle": "Completa la información principal para empezar.",
+    "iconTitle": "Elegir un icono",
+    "iconSubtitle": "Selecciona la ilustración que representa el edificio.",
+    "nameLabel": "Nombre del edificio",
+    "namePlaceholder": "Edificio Lafayette",
+    "positionLabel": "Posición",
+    "latitudePlaceholder": "Latitud",
+    "longitudePlaceholder": "Longitud",
+    "useCurrentLocation": "Usar mi ubicación actual",
+    "selectOnMap": "Elegir en el mapa",
+    "mapTitle": "Seleccionar en el mapa",
+    "mapSubtitle": "Toca el mapa para ubicar el edificio.",
+    "mapNoSelection": "Ningún punto seleccionado.",
+    "mapConfirm": "Confirmar",
+    "cancel": "Cancelar",
+    "update": "Actualizar",
+    "save": "Guardar"
+  },
+  "buildingActions": {
+    "title": "Acciones",
+    "reorder": "Reordenar lista",
+    "edit": "Editar",
+    "delete": "Eliminar"
+  },
+  "buildingDetail": {
+    "coordinates": "Lat. {{latitude}} · Lon. {{longitude}}",
+    "stateLabel": "Estado: {{condition}}",
+    "globalRepairCost": "Precio: {{amount}}",
+    "defectsTitle": "Defectos",
+    "defectLabel": "Defecto #{{index}}",
+    "noDefects": "Aún no hay defectos registrados.",
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "addDefect": "Agregar defecto",
+    "imageSourceTitle": "Agregar una foto",
+    "imageSourceMessage": "Elige el origen de la imagen del defecto.",
+    "takePhoto": "Tomar una foto",
+    "chooseFromGallery": "Elegir de la galería",
+    "permissionDeniedTitle": "Permiso requerido",
+    "cameraPermissionRequired": "Se requiere acceso a la cámara para agregar un defecto.",
+    "galleryPermissionRequired": "Se requiere acceso a la galería para elegir una foto.",
+    "photoSelectedTitle": "Defecto agregado",
+    "photoSelectedMessage": "El defecto con su foto se ha guardado correctamente.",
+    "noDefectDetectedTitle": "No se detectó defecto",
+    "noDefectDetectedMessage": "La foto no muestra un defecto claro. No se agregó el defecto.",
+    "analysisFailedTitle": "Falló el análisis IA",
+    "analysisFailedMessage": "No pudimos analizar la foto. Inténtalo con una foto más clara.",
+    "geminiNotConfiguredTitle": "Falta la URL del proxy IA",
+    "geminiNotConfiguredMessage": "Agrega GEMINI_PROXY_URL en tu archivo .env para activar el análisis IA.",
+    "photoDataErrorTitle": "Foto inválida",
+    "photoDataErrorMessage": "No se pudo leer la foto seleccionada.",
+    "defectStateType": "Estado {{state}} · {{type}}",
+    "defectRepairPrice": "Reparación estimada: {{amount}}",
+    "unknownValue": "Desconocido",
+    "closePhoto": "Cerrar foto"
+  },
+  "defectDetail": {
+    "title": "Defecto {{index}}",
+    "createdAt": "Agregado el {{date}}",
+    "createdAtUnknown": "Fecha desconocida",
+    "noPhoto": "Sin foto",
+    "aiSectionTitle": "Análisis IA",
+    "damageState": "Estado: {{value}}",
+    "damageType": "Tipo: {{value}}",
+    "estimatedRepairCost": "Costo estimado: {{amount}}",
+    "confidence": "Confianza: {{value}}",
+    "unknownValue": "Desconocido",
+    "back": "Volver",
+    "delete": "Eliminar",
+    "deleteTitle": "¿Eliminar este defecto?",
+    "deleteMessage": "Esta acción es irreversible.",
+    "deleteCancel": "Cancelar",
+    "deleteConfirm": "Eliminar"
+  },
+  "defectAnalysisLoading": {
+    "title": "Análisis IA en curso",
+    "subtitle": "Espera mientras analizamos el defecto.",
+    "warning": "No cierres la app durante este paso, el análisis puede interrumpirse.",
+    "phraseInspectingSurface": "Inspeccionando la superficie de la foto...",
+    "phraseCheckingDamageType": "Identificando el tipo de daño...",
+    "phraseEstimatingRepairCost": "Estimando el costo de reparación...",
+    "phraseCrossCheckingResult": "Ejecutando verificaciones finales..."
+  },
+  "buildingReorder": {
+    "defaultName": "Edificio",
+    "stateLabel": "Estado: {{condition}}",
+    "defectCount": "{{count}} defecto(s)",
+    "helper": "Mantén el asa y arrastra para cambiar el orden.",
+    "emptyState": "Agrega edificios para poder reordenarlos.",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "iconPicker": {
+    "back": "Volver"
+  },
+  "iconOptions": {
+    "business": "Edificio",
+    "home": "Casa",
+    "church": "Iglesia",
+    "warehouse": "Almacén",
+    "factory": "Fábrica",
+    "school": "Escuela"
+  },
+  "settingsScreen": {
+    "title": "Configuración",
+    "emailSubject": "Solicitud de soporte",
+    "alerts": {
+      "mailUnavailable": {
+        "title": "Error",
+        "message": "No se encontró ninguna app de correo."
+      },
+      "mailOpenFailed": {
+        "title": "Error",
+        "message": "No se pudo abrir la app de correo."
+      },
+      "reviewUnavailable": {
+        "title": "Valoración no disponible",
+        "message": "La ventana nativa de valoración no está disponible en este dispositivo ahora mismo."
+      },
+      "reviewFailed": {
+        "title": "Error",
+        "message": "No se pudo abrir la ventana de valoración."
+      },
+      "manageSubscriptionUnavailable": {
+        "title": "Suscripción no disponible",
+        "message": "No se puede abrir la gestión de la suscripción en este momento."
+      },
+      "manageSubscriptionFailed": {
+        "title": "Error",
+        "message": "No se pudo abrir la gestión de la suscripción."
+      }
+    },
+    "modalTitles": {
+      "manageSubscription": "Gestionar suscripción",
+      "sendFeedback": "Enviar comentarios"
+    }
+  },
+  "settingsOptions": {
+    "changeLanguage": "Cambiar idioma",
+    "manageSubscription": "Gestionar suscripción",
+    "manageData": "Gestionar datos",
+    "contact": "Contacto",
+    "sendFeedback": "Enviar comentarios",
+    "rateApp": "Valorar la app",
+    "privacyPolicy": "Política de privacidad",
+    "termsOfUse": "Términos de uso"
+  },
+  "settingModals": {
+    "manageData": {
+      "title": "Gestionar datos",
+      "description": "Exporta o importa tu lista de edificios, o elimínala por completo.",
+      "actions": {
+        "export": "Exportar datos",
+        "import": "Importar datos",
+        "delete": "Eliminar datos"
+      },
+      "processing": "Procesando...",
+      "export": {
+        "shareTitle": "Exportar tus datos de Reaft",
+        "shareMessage": "Copia de seguridad de edificios Reaft",
+        "successTitle": "Exportación completada",
+        "successMessage": "Archivo de exportación creado ({{count}} edificio(s)).",
+        "errorTitle": "Error",
+        "errorMessage": "No se pueden exportar los datos."
+      },
+      "import": {
+        "successTitle": "Importación completada",
+        "successMessage": "{{count}} edificio(s) importado(s).",
+        "invalidTitle": "Archivo no válido",
+        "invalidMessage": "El archivo seleccionado no contiene datos válidos de Reaft.",
+        "errorTitle": "Error",
+        "errorMessage": "No se pueden importar los datos."
+      }
+    },
+    "deleteData": {
+      "title": "Eliminar datos",
+      "description": "¿Seguro que quieres eliminar la lista completa de edificios? Esta acción es irreversible.",
+      "cancel": "Cancelar",
+      "confirm": "Eliminar",
+      "successTitle": "Éxito",
+      "successMessage": "Todos tus edificios han sido eliminados.",
+      "successButton": "OK",
+      "errorTitle": "Error",
+      "errorMessage": "No se pueden eliminar los datos."
+    },
+    "changeLanguage": {
+      "title": "Idioma",
+      "subtitle": "Elige tu idioma.",
+      "close": "Cerrar",
+      "options": {
+        "fr": "Français",
+        "en": "English",
+        "es": "Español"
+      }
+    },
+    "placeholder": {
+      "soon": "Funcionalidad disponible pronto.",
+      "close": "Cerrar"
+    }
+  },
+  "paywall": {
+    "title": "Suscríbete a Reaft",
+    "subtitle": "Desbloquea todas las funciones premium desde el inicio.",
+    "features": {
+      "ai": "Análisis IA avanzado",
+      "unlimited": "Uso ilimitado",
+      "monitoring": "Seguimiento detallado del estado de edificios",
+      "reports": "Exportación e importación",
+      "support": "Soporte prioritario",
+      "earlyAccess": "Acceso anticipado a nuevas funciones"
+    },
+    "plans": {
+      "weekly": "Semanal",
+      "weeklyTrial": "3 días gratis",
+      "monthly": "Mensual",
+      "annual": "Anual",
+      "period": {
+        "weekly": "por semana",
+        "monthly": "por mes",
+        "annual": "por año"
+      },
+      "details": {
+        "weekly": "Ideal para probar la app",
+        "monthly": "El plan más flexible",
+        "annual": "Mejor precio en 12 meses"
+      }
+    },
+    "badges": {
+      "popular": "Popular",
+      "bestValue": "Mejor oferta"
+    },
+    "messages": {
+      "loading": "Cargando ofertas...",
+      "unavailable": "No disponible"
+    },
+    "actions": {
+      "close": "Cerrar",
+      "continue": "Continuar",
+      "restore": "Restaurar",
+      "privacy": "Privacidad",
+      "terms": "Condiciones"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "purchaseSuccessTitle": "Compra completada",
+      "purchaseSuccessMessage": "Tu acceso premium está activo.",
+      "pendingTitle": "Compra pendiente",
+      "pendingMessage": "Tu compra se está validando.",
+      "purchaseErrorMessage": "No se pudo completar la compra.",
+      "restoreSuccessTitle": "Compras restauradas",
+      "restoreSuccessMessage": "Tu acceso premium ha sido restaurado.",
+      "restoreEmptyTitle": "No se encontraron compras",
+      "restoreEmptyMessage": "No se encontró ninguna compra activa para esta cuenta.",
+      "restoreErrorMessage": "No se pudieron restaurar las compras.",
+      "linkError": "No se pudo abrir este enlace."
+    }
+  },
+  "onboarding": {
+    "stepCounter": "Paso {{current}}/{{total}}",
+    "welcome": {
+      "title": "Bienvenido a Reaft",
+      "subtitle": "Configura tu perfil en segundos para una experiencia más útil."
+    },
+    "profile": {
+      "title": "¿Quién eres?",
+      "subtitle": "Esto nos ayuda a adaptar la app a tu contexto.",
+      "options": {
+        "individual": "Particular",
+        "company": "Empresa",
+        "community": "Comunidad",
+        "association": "Asociación",
+        "other": "Otro"
+      }
+    },
+    "discovery": {
+      "title": "¿Cómo nos conociste?",
+      "subtitle": "Nos ayuda a identificar los canales más efectivos.",
+      "options": {
+        "wordOfMouth": "Boca a boca",
+        "socialMedia": "Redes sociales",
+        "searchEngine": "Búsqueda web",
+        "store": "App Store / Play Store",
+        "other": "Otro"
+      }
+    },
+    "review": {
+      "title": "¿Te gusta Reaft?",
+      "subtitle": "Una valoración rápida nos ayuda mucho a seguir mejorando.",
+      "cta": "Dejar una valoración",
+      "successHint": "Gracias por tu comentario.",
+      "unavailableTitle": "Valoración no disponible",
+      "unavailableMessage": "La ventana nativa de valoración no está disponible ahora.",
+      "errorTitle": "Error",
+      "errorMessage": "No se pudo abrir la ventana de valoración."
+    },
+    "actions": {
+      "back": "Volver",
+      "continue": "Continuar",
+      "finish": "Continuar a suscripción"
+    }
+  },
+  "mapScreen": {
+    "title": "Mapa",
+    "cluster": {
+      "multipleBuildings": "Varios edificios"
+    },
+    "conditions": {
+      "A": "Estado excelente",
+      "B": "Buen estado",
+      "C": "Estado aceptable",
+      "D": "Estado deteriorado",
+      "E": "Mal estado",
+      "F": "Estado crítico",
+      "unknown": "Estado desconocido"
+    },
+    "popup": {
+      "conditionBadge": "Estado {{condition}}",
+      "defectCount": "{{count}} defecto(s)",
+      "globalRepairCostLabel": "Costo total de reparación",
+      "coordinatesLabel": "Coordenadas",
+      "addedDateLabel": "Fecha de alta",
+      "viewBuilding": "Ver este edificio",
+      "notAvailable": "N/D"
+    },
+    "locationPermission": {
+      "title": "Permiso de ubicación",
+      "message": "Esta aplicación necesita acceder a tu ubicación.",
+      "later": "Más tarde",
+      "cancel": "Cancelar",
+      "ok": "OK"
+    }
+  }
+}

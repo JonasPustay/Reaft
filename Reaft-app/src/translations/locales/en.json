@@ -1,0 +1,379 @@
+{
+  "tabs": {
+    "building": "Buildings",
+    "map": "Map",
+    "settings": "Settings"
+  },
+  "buildingScreen": {
+    "title": "Buildings",
+    "loading": "Loading buildings...",
+    "errors": {
+      "nameRequired": "Building name is required.",
+      "invalidLatitude": "Invalid latitude.",
+      "invalidLongitude": "Invalid longitude.",
+      "saveFailed": "Unable to save the building right now."
+    },
+    "delete": {
+      "title": "Delete this building?",
+      "message": "This action will delete the building \"{{name}}\".",
+      "cancel": "Cancel",
+      "confirm": "Delete"
+    },
+    "location": {
+      "permissionRequired": "Location access requires your permission.",
+      "success": "Current location retrieved!",
+      "failed": "Unable to retrieve location."
+    }
+  },
+  "buildingEmptyState": {
+    "title": "Create your first building",
+    "description": "Save your buildings to track inspections, defects, and their overall condition.",
+    "cta": "Add your first building"
+  },
+  "buildingList": {
+    "coordinates": "Lat. {{latitude}} · Lon. {{longitude}}",
+    "stateLabel": "Condition: {{condition}}",
+    "defectCount": "{{count}} defect(s)",
+    "globalRepairCost": "Total repair cost: {{amount}}",
+    "description": "Manage your buildings, their locations, and track defects found during inspections.",
+    "globalRepairCostLabel": "Total repair cost",
+    "stateShort": "Condition",
+    "priceShort": "Price"
+  },
+  "buildingForm": {
+    "titleEdit": "Edit building",
+    "titleCreate": "New building",
+    "subtitle": "Fill in the main information to get started.",
+    "iconTitle": "Choose an icon",
+    "iconSubtitle": "Select the illustration that best represents the building.",
+    "nameLabel": "Building name",
+    "namePlaceholder": "Lafayette Building",
+    "positionLabel": "Position",
+    "latitudePlaceholder": "Latitude",
+    "longitudePlaceholder": "Longitude",
+    "useCurrentLocation": "Use my current location",
+    "selectOnMap": "Choose on map",
+    "mapTitle": "Select on map",
+    "mapSubtitle": "Tap the map to place the building.",
+    "mapNoSelection": "No point selected.",
+    "mapConfirm": "Confirm",
+    "cancel": "Cancel",
+    "update": "Update",
+    "save": "Save"
+  },
+  "buildingActions": {
+    "title": "Actions",
+    "reorder": "Reorder list",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "buildingDetail": {
+    "coordinates": "Lat. {{latitude}} · Lon. {{longitude}}",
+    "stateLabel": "Condition: {{condition}}",
+    "globalRepairCost": "Price: {{amount}}",
+    "defectsTitle": "Defects",
+    "defectLabel": "Defect #{{index}}",
+    "noDefects": "No defects recorded yet.",
+    "close": "Close",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "addDefect": "Add defect",
+    "imageSourceTitle": "Add a photo",
+    "imageSourceMessage": "Choose the defect image source.",
+    "takePhoto": "Take a photo",
+    "chooseFromGallery": "Choose from gallery",
+    "permissionDeniedTitle": "Permission required",
+    "cameraPermissionRequired": "Camera access is required to add a defect.",
+    "galleryPermissionRequired": "Gallery access is required to choose a photo.",
+    "photoSelectedTitle": "Defect added",
+    "photoSelectedMessage": "The defect with its photo has been saved.",
+    "noDefectDetectedTitle": "No defect detected",
+    "noDefectDetectedMessage": "The photo does not show a clear defect. The defect was not added.",
+    "analysisFailedTitle": "AI analysis failed",
+    "analysisFailedMessage": "We could not analyze this photo. Try again with a clearer photo.",
+    "geminiNotConfiguredTitle": "Missing AI proxy URL",
+    "geminiNotConfiguredMessage": "Add GEMINI_PROXY_URL in your .env file to enable AI analysis.",
+    "photoDataErrorTitle": "Invalid photo",
+    "photoDataErrorMessage": "Unable to read the selected photo.",
+    "defectStateType": "State {{state}} · {{type}}",
+    "defectRepairPrice": "Estimated repair: {{amount}}",
+    "unknownValue": "Unknown",
+    "closePhoto": "Close photo"
+  },
+  "defectDetail": {
+    "title": "Defect {{index}}",
+    "createdAt": "Added on {{date}}",
+    "createdAtUnknown": "Unknown date",
+    "noPhoto": "No photo",
+    "aiSectionTitle": "AI analysis",
+    "damageState": "State: {{value}}",
+    "damageType": "Type: {{value}}",
+    "estimatedRepairCost": "Estimated cost: {{amount}}",
+    "confidence": "Confidence: {{value}}",
+    "unknownValue": "Unknown",
+    "back": "Back",
+    "delete": "Delete",
+    "deleteTitle": "Delete this defect?",
+    "deleteMessage": "This action cannot be undone.",
+    "deleteCancel": "Cancel",
+    "deleteConfirm": "Delete"
+  },
+  "defectAnalysisLoading": {
+    "title": "AI analysis in progress",
+    "subtitle": "Please wait while we analyze the defect.",
+    "warning": "Do not close the app during this step, the analysis may be interrupted.",
+    "phraseInspectingSurface": "Inspecting the photo surface...",
+    "phraseCheckingDamageType": "Identifying the damage type...",
+    "phraseEstimatingRepairCost": "Estimating repair cost...",
+    "phraseCrossCheckingResult": "Running final consistency checks..."
+  },
+  "buildingReorder": {
+    "defaultName": "Building",
+    "stateLabel": "Condition: {{condition}}",
+    "defectCount": "{{count}} defect(s)",
+    "helper": "Hold the handle and drag to change the order.",
+    "emptyState": "Add buildings to reorder them.",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "iconPicker": {
+    "back": "Back"
+  },
+  "iconOptions": {
+    "business": "Office building",
+    "home": "House",
+    "church": "Church",
+    "warehouse": "Warehouse",
+    "factory": "Factory",
+    "school": "School"
+  },
+  "settingsScreen": {
+    "title": "Settings",
+    "emailSubject": "Support request",
+    "alerts": {
+      "mailUnavailable": {
+        "title": "Error",
+        "message": "No mail app found."
+      },
+      "mailOpenFailed": {
+        "title": "Error",
+        "message": "Unable to open mail app."
+      },
+      "reviewUnavailable": {
+        "title": "Rating unavailable",
+        "message": "The native rating prompt is not available on this device right now."
+      },
+      "reviewFailed": {
+        "title": "Error",
+        "message": "Unable to open the rating prompt."
+      },
+      "manageSubscriptionUnavailable": {
+        "title": "Subscription unavailable",
+        "message": "Unable to open subscription management right now."
+      },
+      "manageSubscriptionFailed": {
+        "title": "Error",
+        "message": "Unable to open subscription management."
+      }
+    },
+    "modalTitles": {
+      "manageSubscription": "Manage subscription",
+      "sendFeedback": "Send feedback"
+    }
+  },
+  "settingsOptions": {
+    "changeLanguage": "Change language",
+    "manageSubscription": "Manage subscription",
+    "manageData": "Manage data",
+    "contact": "Contact",
+    "sendFeedback": "Send feedback",
+    "rateApp": "Rate the app",
+    "privacyPolicy": "Privacy policy",
+    "termsOfUse": "Terms of use"
+  },
+  "settingModals": {
+    "manageData": {
+      "title": "Manage data",
+      "description": "Export or import your buildings list, or delete it completely.",
+      "actions": {
+        "export": "Export data",
+        "import": "Import data",
+        "delete": "Delete data"
+      },
+      "processing": "Processing...",
+      "export": {
+        "shareTitle": "Export your Reaft data",
+        "shareMessage": "Reaft buildings backup",
+        "successTitle": "Export complete",
+        "successMessage": "Export file created ({{count}} building(s)).",
+        "errorTitle": "Error",
+        "errorMessage": "Unable to export data."
+      },
+      "import": {
+        "successTitle": "Import complete",
+        "successMessage": "{{count}} building(s) imported.",
+        "invalidTitle": "Invalid file",
+        "invalidMessage": "The selected file does not contain valid Reaft data.",
+        "errorTitle": "Error",
+        "errorMessage": "Unable to import data."
+      }
+    },
+    "deleteData": {
+      "title": "Delete data",
+      "description": "Are you sure you want to delete the full buildings list? This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Delete",
+      "successTitle": "Success",
+      "successMessage": "All your buildings have been deleted.",
+      "successButton": "OK",
+      "errorTitle": "Error",
+      "errorMessage": "Unable to delete data."
+    },
+    "changeLanguage": {
+      "title": "Language",
+      "subtitle": "Choose your language.",
+      "close": "Close",
+      "options": {
+        "fr": "Français",
+        "en": "English",
+        "es": "Español"
+      }
+    },
+    "placeholder": {
+      "soon": "Feature coming soon.",
+      "close": "Close"
+    }
+  },
+  "paywall": {
+    "title": "Subscribe to Reaft",
+    "subtitle": "Unlock every premium feature from the start.",
+    "features": {
+      "ai": "Advanced AI analysis",
+      "unlimited": "Unlimited usage",
+      "monitoring": "Detailed building condition tracking",
+      "reports": "Export and import",
+      "support": "Priority support",
+      "earlyAccess": "Early access to new features"
+    },
+    "plans": {
+      "weekly": "Weekly",
+      "weeklyTrial": "3 days free",
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "period": {
+        "weekly": "per week",
+        "monthly": "per month",
+        "annual": "per year"
+      },
+      "details": {
+        "weekly": "Great for trying the app",
+        "monthly": "The most flexible plan",
+        "annual": "Best price over 12 months"
+      }
+    },
+    "badges": {
+      "popular": "Popular",
+      "bestValue": "Best value"
+    },
+    "messages": {
+      "loading": "Loading offers...",
+      "unavailable": "Unavailable"
+    },
+    "actions": {
+      "close": "Close",
+      "continue": "Continue",
+      "restore": "Restore",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "purchaseSuccessTitle": "Purchase successful",
+      "purchaseSuccessMessage": "Your premium access is now active.",
+      "pendingTitle": "Purchase pending",
+      "pendingMessage": "Your purchase is being validated.",
+      "purchaseErrorMessage": "Unable to complete the purchase.",
+      "restoreSuccessTitle": "Purchases restored",
+      "restoreSuccessMessage": "Your premium access has been restored.",
+      "restoreEmptyTitle": "No purchases found",
+      "restoreEmptyMessage": "No active purchase was found for this account.",
+      "restoreErrorMessage": "Unable to restore purchases.",
+      "linkError": "Unable to open this link."
+    }
+  },
+  "onboarding": {
+    "stepCounter": "Step {{current}}/{{total}}",
+    "welcome": {
+      "title": "Welcome to Reaft",
+      "subtitle": "Set up your profile in a few seconds for a more relevant experience."
+    },
+    "profile": {
+      "title": "Who are you?",
+      "subtitle": "This helps us adapt the app to your context.",
+      "options": {
+        "individual": "Individual",
+        "company": "Company",
+        "community": "Community",
+        "association": "Association",
+        "other": "Other"
+      }
+    },
+    "discovery": {
+      "title": "How did you hear about us?",
+      "subtitle": "This helps us understand which channels work best.",
+      "options": {
+        "wordOfMouth": "Word of mouth",
+        "socialMedia": "Social media",
+        "searchEngine": "Web search",
+        "store": "App Store / Play Store",
+        "other": "Other"
+      }
+    },
+    "review": {
+      "title": "Enjoying Reaft?",
+      "subtitle": "A quick review helps us a lot and supports the project.",
+      "cta": "Leave a review",
+      "successHint": "Thanks for your feedback.",
+      "unavailableTitle": "Rating unavailable",
+      "unavailableMessage": "The native rating prompt is not available right now.",
+      "errorTitle": "Error",
+      "errorMessage": "Unable to open the rating prompt."
+    },
+    "actions": {
+      "back": "Back",
+      "continue": "Continue",
+      "finish": "Continue to subscription"
+    }
+  },
+  "mapScreen": {
+    "title": "Map",
+    "cluster": {
+      "multipleBuildings": "Multiple buildings"
+    },
+    "conditions": {
+      "A": "Excellent condition",
+      "B": "Good condition",
+      "C": "Fair condition",
+      "D": "Degraded condition",
+      "E": "Poor condition",
+      "F": "Critical condition",
+      "unknown": "Unknown condition"
+    },
+    "popup": {
+      "conditionBadge": "Condition {{condition}}",
+      "defectCount": "{{count}} defect(s)",
+      "globalRepairCostLabel": "Total repair cost",
+      "coordinatesLabel": "Coordinates",
+      "addedDateLabel": "Added on",
+      "viewBuilding": "View this building",
+      "notAvailable": "N/A"
+    },
+    "locationPermission": {
+      "title": "Location permission",
+      "message": "This app needs access to your location.",
+      "later": "Later",
+      "cancel": "Cancel",
+      "ok": "OK"
+    }
+  }
+}
