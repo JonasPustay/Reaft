@@ -141,10 +141,21 @@ export default function App() {
         // no-op: l'app continue même si la persistance échoue
       }
 
+      const hasPremium = await checkPremiumStatus();
+      setIsPaywallVisible(!hasPremium);
       setIsOnboardingComplete(true);
     },
-    [],
+    [checkPremiumStatus],
   );
+
+  const handleDevShowOnboarding = useCallback(async () => {
+    try {
+      await AsyncStorage.removeItem(ONBOARDING_STORAGE_KEY);
+    } catch {
+      // no-op: l'app continue même si la suppression échoue
+    }
+    setIsOnboardingComplete(false);
+  }, []);
 
   if (isOnboardingLoading) {
     return (
@@ -176,12 +187,12 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
         <SafeAreaView className="flex-1 bg-white">
-          <TabNavigator />
+          <TabNavigator onDevShowOnboarding={handleDevShowOnboarding} />
           <Paywall
             visible={isPaywallVisible}
             onClose={() => setIsPaywallVisible(false)}
             onPremiumStatusCheck={checkPremiumStatus}
-            // onDevSkip={() => setIsPaywallVisible(false)}
+            onDevSkip={() => setIsPaywallVisible(false)}
           />
         </SafeAreaView>
       </SafeAreaProvider>

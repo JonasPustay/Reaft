@@ -1,7 +1,10 @@
 {
   "expo": {
     "plugins": [
-      "@rnmapbox/maps",
+      [
+        "@rnmapbox/maps",
+        {}
+      ],
       "expo-localization"
     ],
     "name": "Reaft",

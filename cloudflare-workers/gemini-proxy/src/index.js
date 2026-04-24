@@ -1,4 +1,4 @@
-const DEFAULT_MODEL = "gemini-2.5-flash";
+const DEFAULT_MODEL = "gemini-3-flash-preview";
 
 const jsonResponse = (status, payload, corsHeaders) =>
   new Response(JSON.stringify(payload), {
@@ -144,7 +144,8 @@ export default {
       );
     }
 
-    const model = `${env.DEFAULT_GEMINI_MODEL || DEFAULT_MODEL}`.trim() || DEFAULT_MODEL;
+    const model =
+      `${env.DEFAULT_GEMINI_MODEL || DEFAULT_MODEL}`.trim() || DEFAULT_MODEL;
     const upstreamBody = buildGeminiPayload({
       photoBase64,
       mimeType: requestBody?.mimeType,

@@ -10,7 +10,7 @@ import SettingsScreen from "../screens/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigator() {
+export default function TabNavigator({ onDevShowOnboarding }) {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -19,7 +19,14 @@ export default function TabNavigator() {
       >
         <Tab.Screen name="building" component={BuildingScreen} />
         <Tab.Screen name="map" component={MapScreen} />
-        <Tab.Screen name="settings" component={SettingsScreen} />
+        <Tab.Screen name="settings">
+          {(props) => (
+            <SettingsScreen
+              {...props}
+              onDevShowOnboarding={onDevShowOnboarding}
+            />
+          )}
+        </Tab.Screen>
       </Tab.Navigator>
     </NavigationContainer>
   );

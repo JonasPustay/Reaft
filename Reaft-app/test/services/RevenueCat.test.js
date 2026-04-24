@@ -9,12 +9,8 @@
 const MOCK_PURCHASES = {
   setLogLevel: jest.fn(),
   configure: jest.fn(),
-  getOfferings: jest
-    .fn()
-    .mockResolvedValue({ current: { availablePackages: [] } }),
-  getCustomerInfo: jest
-    .fn()
-    .mockResolvedValue({ entitlements: { active: {} } }),
+  getOfferings: jest.fn().mockResolvedValue({ current: { availablePackages: [] } }),
+  getCustomerInfo: jest.fn().mockResolvedValue({ entitlements: { active: {} } }),
   purchasePackage: jest.fn().mockResolvedValue({ customerInfo: {} }),
   restorePurchases: jest.fn().mockResolvedValue({ customerInfo: {} }),
   logIn: jest.fn().mockResolvedValue({ customerInfo: {} }),
@@ -43,10 +39,7 @@ describe("RevenueCat on Android", () => {
 
   it("configure returns unsupported_platform", () => {
     const result = RevenueCat.configure();
-    expect(result).toEqual({
-      configured: false,
-      reason: "unsupported_platform",
-    });
+    expect(result).toEqual({ configured: false, reason: "unsupported_platform" });
   });
 
   it("getOfferings returns null", async () => {
@@ -137,7 +130,7 @@ describe("RevenueCat on iOS – configure()", () => {
     RevenueCat = require("../../src/services/RevenueCat").default;
     RevenueCat.configure({ debug: false });
     expect(Purchases.configure).toHaveBeenCalledWith(
-      expect.objectContaining({ appUserID: undefined }),
+      expect.objectContaining({ appUserID: undefined })
     );
   });
 });
@@ -175,7 +168,7 @@ describe("RevenueCat on iOS – missing API key", () => {
     const RevenueCat = require("../../src/services/RevenueCat").default;
     RevenueCat.configure({ debug: false });
     expect(console.warn).toHaveBeenCalledWith(
-      expect.stringContaining("REVENUECAT_API_KEY_IOS"),
+      expect.stringContaining("REVENUECAT_API_KEY_IOS")
     );
   });
 });

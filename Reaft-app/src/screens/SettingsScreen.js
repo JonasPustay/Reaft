@@ -25,7 +25,7 @@ import {
   ChangeLanguageModal,
 } from "../components/settings/SettingModals";
 
-export default function SettingsScreen() {
+export default function SettingsScreen({ onDevShowOnboarding }) {
   const { t, i18n } = useTranslation();
   const [activeAction, setActiveAction] = useState(null);
 
@@ -207,6 +207,12 @@ export default function SettingsScreen() {
     }
   };
 
+  const handleDevShowOnboardingPress = () => {
+    if (typeof onDevShowOnboarding === "function") {
+      onDevShowOnboarding();
+    }
+  };
+
   return (
     <ScreenWrapper>
       <CustomHeader title={t("settingsScreen.title")} />
@@ -221,6 +227,21 @@ export default function SettingsScreen() {
               onPress={() => handleOptionPress(item.action)}
             />
           )}
+          ListFooterComponent={
+            __DEV__ ? (
+              <View className="items-center pb-3 pt-1">
+                <TouchableOpacity
+                  className="rounded-md border border-slate-300 bg-slate-100 px-3 py-1.5"
+                  onPress={handleDevShowOnboardingPress}
+                  activeOpacity={0.8}
+                >
+                  <Text className="text-[10.5px] font-extrabold uppercase tracking-[0.3px] text-slate-700">
+                    Voir onboarding dev
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            ) : null
+          }
         />
       </View>
 

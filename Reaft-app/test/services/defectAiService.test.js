@@ -476,7 +476,7 @@ describe("analyzeDefectPhotoWithGemini – usage metrics", () => {
     expect(result.usage.totalTokens).toBe(280);
   });
 
-  it("returns estimated cost for gemini-2.5-flash", async () => {
+  it("returns estimated cost for gemini-3-flash-preview", async () => {
     mockFetchOk(
       makeGeminiPayload(
         { has_defect: false, confidence: 0.9, summary: "" },
@@ -487,10 +487,10 @@ describe("analyzeDefectPhotoWithGemini – usage metrics", () => {
       photoBase64: PHOTO,
       building: BUILDING,
     });
-    // 1M input tokens at $0.3/M → $0.3 ; 1M output tokens at $2.5/M → $2.5
-    expect(result.usage.inputCostUsd).toBeCloseTo(0.3, 5);
-    expect(result.usage.outputCostUsd).toBeCloseTo(2.5, 5);
-    expect(result.usage.estimatedTotalCostUsd).toBeCloseTo(2.8, 5);
+    // 1M input tokens at $0.5/M → $0.5 ; 1M output tokens at $3.0/M → $3.0
+    expect(result.usage.inputCostUsd).toBeCloseTo(0.5, 5);
+    expect(result.usage.outputCostUsd).toBeCloseTo(3.0, 5);
+    expect(result.usage.estimatedTotalCostUsd).toBeCloseTo(3.5, 5);
   });
 
   it("returns null costs when usage metadata is missing", async () => {

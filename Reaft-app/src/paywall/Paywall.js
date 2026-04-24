@@ -113,6 +113,7 @@ export default function Paywall({
   visible,
   onClose,
   onPremiumStatusCheck,
+  onDevSkip,
 }) {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
@@ -475,7 +476,7 @@ export default function Paywall({
 
   return (
     <Modal
-      animationType="fade"
+      animationType="none"
       transparent={false}
       presentationStyle="fullScreen"
       visible={visible}
@@ -594,6 +595,17 @@ export default function Paywall({
                   {t("paywall.actions.terms")}
                 </Text>
               </TouchableOpacity>
+              {__DEV__ && typeof onDevSkip === "function" ? (
+                <TouchableOpacity
+                  className="rounded-md border border-slate-300 bg-slate-100 px-2 py-1"
+                  onPress={onDevSkip}
+                  activeOpacity={0.8}
+                >
+                  <Text className="text-[10.5px] font-extrabold uppercase tracking-[0.3px] text-slate-700">
+                    Skip dev
+                  </Text>
+                </TouchableOpacity>
+              ) : null}
             </View>
           </View>
         </ScrollView>
