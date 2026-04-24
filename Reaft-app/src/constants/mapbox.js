@@ -1,4 +1,4 @@
 export const MAPBOX_ACCESS_TOKEN =
-  "pk.eyJ1IjoieWFubmljazE5OTkiLCJhIjoiY21vZDBycm0wMDV5cjJwcW83dzhkcGwzMSJ9.SsEbBb6Ao7Kf0TOWymwkmw";
+  "sk.eyJ1IjoieWFubmljazE5OTkiLCJhIjoiY21vZDF4YzNmMDZtZDJzc2VrY2UwOWF1YyJ9.2mcmhbyjJ4-BSCx1c4c4Jw";
 
 export const MAPBOX_STYLE_URL = "mapbox://styles/mapbox/streets-v12";
