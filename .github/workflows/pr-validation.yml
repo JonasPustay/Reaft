@@ -1,0 +1,72 @@
+name: PR Validation — Reaft App
+
+on:
+  pull_request:
+    branches: [main, master, develop]
+    paths:
+      - "Reaft-app/**"
+      - ".github/workflows/pr-validation.yml"
+
+jobs:
+  test-and-docs:
+    name: Tests & JSDoc
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Reaft-app
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Yarn 3.6.3
+        run: |
+          corepack enable
+          corepack prepare yarn@3.6.3 --activate
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            .yarn/cache
+            node_modules
+          key: ${{ runner.os }}-reaft-yarn-${{ hashFiles('Reaft-app/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-reaft-yarn-
+
+      # ==================== ENVIRONMENT ====================
+      - name: Create .env file from secrets
+        run: |
+          echo "GEMINI_PROXY_URL=${{ secrets.GEMINI_PROXY_URL }}" > .env
+          echo "REVENUECAT_API_KEY_IOS=${{ secrets.REVENUECAT_API_KEY_IOS }}" >> .env
+          echo "Created .env with $(wc -l < .env) variables"
+
+      # ==================== INSTALL & TEST ====================
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run unit tests
+        run: yarn test --coverage
+
+      - name: Generate JSDoc
+        run: yarn docs
+
+      # ==================== ARTIFACTS ====================
+      - name: Upload JSDoc artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jsdoc-pr-${{ github.event.number }}
+          path: Reaft-app/docs/
+          retention-days: 7
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-pr-${{ github.event.number }}
+          path: Reaft-app/coverage/
+          retention-days: 7

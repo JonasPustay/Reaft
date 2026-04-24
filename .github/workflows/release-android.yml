@@ -1,0 +1,143 @@
+name: Build & Release Android APK (Local)
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    name: Build APK with Android SDK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Reaft-app
+
+    env:
+      JAVA_VERSION: "17"
+      ANDROID_API_LEVEL: "35"
+      ANDROID_BUILD_TOOLS: "35.0.0"
+      NDK_VERSION: "27.0.12077973"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ==================== JAVA ====================
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: ${{ env.JAVA_VERSION }}
+
+      # ==================== NODE ====================
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Yarn 3.6.3
+        run: |
+          corepack enable
+          corepack prepare yarn@3.6.3 --activate
+
+      # ==================== CACHE ====================
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            .yarn/cache
+            node_modules
+          key: ${{ runner.os }}-reaft-yarn-${{ hashFiles('Reaft-app/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-reaft-yarn-
+
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            android/.gradle
+          key: ${{ runner.os }}-gradle-${{ hashFiles('Reaft-app/android/**/*.gradle*', 'Reaft-app/android/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # ==================== ANDROID SDK ====================
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          api-level: ${{ env.ANDROID_API_LEVEL }}
+          build-tools: ${{ env.ANDROID_BUILD_TOOLS }}
+          ndk: ${{ env.NDK_VERSION }}
+          cache: true
+
+      - name: Accept Android licenses
+        run: yes | sdkmanager --licenses
+
+      # ==================== ENVIRONMENT ====================
+      - name: Create .env file from secrets
+        run: |
+          echo "GEMINI_PROXY_URL=${{ secrets.GEMINI_PROXY_URL }}" > .env
+          echo "REVENUECAT_API_KEY_IOS=${{ secrets.REVENUECAT_API_KEY_IOS }}" >> .env
+          echo "Created .env with $(wc -l < .env) variables"
+
+      # ==================== INSTALL & BUILD ====================
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Prebuild native project
+        run: npx expo prebuild --platform android --no-install
+
+      - name: Grant Gradle execute permission
+        run: chmod +x android/gradlew
+
+      # ==================== BUILD APK ====================
+      - name: Build Release APK
+        run: |
+          cd android
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file=${{ github.workspace }}/Reaft-app/android/app/debug.keystore \
+            -Pandroid.injected.signing.store.password=android \
+            -Pandroid.injected.signing.key.alias=androiddebugkey \
+            -Pandroid.injected.signing.key.password=android
+        env:
+          MAPBOX_DOWNLOADS_TOKEN: ${{ secrets.MAPBOX_DOWNLOADS_TOKEN }}
+
+      - name: Verify APK exists
+        run: |
+          ls -la android/app/build/outputs/apk/release/
+          file android/app/build/outputs/apk/release/app-release.apk
+
+      - name: Rename APK
+        run: |
+          mv android/app/build/outputs/apk/release/app-release.apk Reaft-${{ github.ref_name }}.apk
+
+      # ==================== UPLOAD ====================
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: reaft-android-apk
+          path: Reaft-app/Reaft-${{ github.ref_name }}.apk
+
+  release:
+    name: Create GitHub Release
+    needs: build-apk
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download APK artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: reaft-android-apk
+          path: ./
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Reaft ${{ github.ref_name }}
+          files: Reaft-*.apk
+          generate_release_notes: true
