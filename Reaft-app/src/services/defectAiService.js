@@ -1,6 +1,6 @@
 import { GEMINI_PROXY_URL } from "@env";
 
-export const GEMINI_MODEL_NAME = "gemini-2.5-flash";
+export const GEMINI_MODEL_NAME = "gemini-3-flash-preview";
 
 const resolveGeminiProxyEndpoint = (rawValue) => {
   if (typeof rawValue !== "string") return "";
@@ -30,6 +30,11 @@ const MODEL_PAID_PRICING_USD_PER_MILLION = {
     inputTextImageVideo: 0.3,
     inputAudio: 1.0,
     output: 2.5,
+  },
+  "gemini-3-flash-preview": {
+    inputTextImageVideo: 0.5,
+    inputAudio: 1.0,
+    output: 3.0,
   },
   "gemini-3.1-flash-lite-preview": {
     inputTextImageVideo: 0.25,
@@ -184,8 +189,8 @@ const logModelOutput = ({ modelText, parsedJson }) => {
     }
   })();
 
-  console.log(`[Gemini Output Raw] ${rawOutput}`);
-  console.log(`[Gemini Output JSON] ${parsedOutput}`);
+  console.log(`[Gemini Output Raw] model=${GEMINI_MODEL_NAME} ${rawOutput}`);
+  console.log(`[Gemini Output JSON] model=${GEMINI_MODEL_NAME} ${parsedOutput}`);
 };
 
 const normalizeAnalysis = (raw) => {

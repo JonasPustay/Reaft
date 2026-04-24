@@ -40,8 +40,6 @@ yarn-error.*
 
 .env
 
-docs/
-coverage/
-
-
 .yarn
+
+coverage/

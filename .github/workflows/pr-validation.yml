@@ -2,7 +2,7 @@ name: PR Validation — Reaft App
 
 on:
   pull_request:
-    branches: [main, transfer-dev]
+    branches: [main, master, develop]
     paths:
       - "Reaft-app/**"
       - ".github/workflows/pr-validation.yml"
@@ -39,6 +39,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-reaft-yarn-
 
+      # ==================== ENVIRONMENT ====================
+      - name: Create .env file from secrets
+        run: |
+          echo "GEMINI_PROXY_URL=${{ secrets.GEMINI_PROXY_URL }}" > .env
+          echo "REVENUECAT_API_KEY_IOS=${{ secrets.REVENUECAT_API_KEY_IOS }}" >> .env
+          echo "Created .env with $(wc -l < .env) variables"
+
+      # ==================== INSTALL & TEST ====================
       - name: Install dependencies
         run: yarn install --immutable
 
@@ -48,6 +56,7 @@ jobs:
       - name: Generate JSDoc
         run: yarn docs
 
+      # ==================== ARTIFACTS ====================
       - name: Upload JSDoc artifact
         uses: actions/upload-artifact@v4
         with:

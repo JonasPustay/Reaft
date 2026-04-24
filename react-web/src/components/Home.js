@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Mockup from "../assets/images/Mockup.png";
 import BlackAppStore from "../assets/images/BlackAppStore.png";
 import LightAppStore from "../assets/images/LightAppStore.png";
 import BlackGooglePlay from "../assets/images/BlackGooglePlay.png";
@@ -223,9 +222,14 @@ export default function Home({ darkMode = false }) {
           <p className="status-pill">Diagnostic instantané</p>
           <div className="mockup-shell">
             <img
-              className="HomeMockup"
-              src={Mockup}
-              alt="Capture d'écran de l'application Reaft"
+              className="hero-phone-screen hero-phone-screen-left"
+              src="/screenshots/batiments.png"
+              alt="Capture de l'application Reaft avec analyse des bâtiments"
+            />
+            <img
+              className="hero-phone-screen hero-phone-screen-right"
+              src="/screenshots/map.png"
+              alt="Capture de l'application Reaft avec carte des inspections"
             />
           </div>
           <p className="trust-pill">Mode local: confidentialité préservée</p>
